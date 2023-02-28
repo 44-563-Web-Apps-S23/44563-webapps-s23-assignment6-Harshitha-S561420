@@ -29,26 +29,47 @@
     <input type="radio" id="min" name="calculations" onclick="chooseOp()" value="minimum">
     <label for="min">min</label></br>
   </form>
-  <p id="result2">This text will be replaced </p>
+  <p id="result2"> Result will display</p>
 
+  <script> 
 
-
-<script> 
-
-function convert(){
-    base = document.getElementById("form_base").value;
-    value= document.getElementById("form_conversion").value;
-    toShow="";
-    out = document.getElementById("result")
-    
-    for(let i=0;i<5;i++){
+    function convert(){
+        base = document.getElementById("form_base").value;
+        value= document.getElementById("form_conversion").value;
+        toShow="";
+        out = document.getElementById("result")
         
-        let conversion=base*value;
-        toShow=toShow+" "+ base +" is "+ conversion+";";
-        base=base*2
+        for(let i=0;i<5;i++){
+            
+            let conversion=base*value;
+            toShow=toShow+" "+ base +" is "+ conversion+";";
+            base=base*2
+        }
+        document.getElementById("result").innerHTML = "Conversions are:" + toShow;
     }
-    document.getElementById("result").innerHTML = "Conversions are:" + toShow;
-}
+    
+    function chooseOp(){
+        let results = 0;
+                let base = document.getElementById("form_base").value;
+                let conversion = document.getElementById("form_conversion").value;
+                let average = document.getElementById("average").checked;
+                let max = document.getElementById("max").checked;
+                let min = document.getElementById("min").checked;
+                if (average) {
+                    results = (parseInt(base)+parseInt(conversion))/2;
+                }
+                else if (max) {
+                    results = Math.max(base,conversion);
+                }
+                else if (min) {
+                    results = Math.min(base,conversion);
+                }
+                document.getElementById("result2").innerHTML = results
+    }
+    </script>
+    
+    </body>
+    </html>
 
 
 </script>
