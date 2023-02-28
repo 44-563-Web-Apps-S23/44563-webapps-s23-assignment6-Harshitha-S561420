@@ -19,7 +19,7 @@
 </form>
 <div class="container">
     <img src="Abelia.jpg"id="image"onclick="selectimage()"
-    alt="Abelia.jpg" stylr="width:100px;height:100px;">
+    alt="Abelia.jpg" style="width:100px;height:100px;">
 </div>
 <p id="result">Result</p>
 <script> 
@@ -41,6 +41,22 @@ function checkpainter(){
     }
     out.innerHTML="Right count:" +good+" Wrong count:"+oops
 }
+function selectimage(){
+    switch (useimage){
+        case 1: useimage=useimage+1
+        image.src="Abelia.jpg";
+        break;
+        case 2: useimage=useimage+1
+        image.src="lilac.jpg";
+        break;
+        case 3: useimage=useimage+1
+        image.src="Taxus.jpg";
+        break;
+    }
+}
+function giveAlert(){
+    alert("Sorry ran out of guesses.");
+} 
 </script>
 
 </body>
