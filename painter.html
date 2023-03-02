@@ -36,7 +36,12 @@ function checkpainter(){
     if(password==check){
         alart("You got is right")
         good=good+1
-    } else {
+    } 
+    else if(oops >=10){
+        document.getElementById("btn").onclick=giveAlert();
+        oops=oops+1
+    }
+    else {
         oops=oops+1
         alert('sorry')
     }
